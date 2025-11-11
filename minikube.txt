@@ -1,0 +1,18 @@
+
+#install minikube
+
+Option 1: PowerShell (recommended)
+Run this command:
+
+New-Item -Path 'C:\minikube' -ItemType Directory -Force
+Invoke-WebRequest -Uri "https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe" -OutFile "C:\minikube\minikube.exe"
+
+
+# Then add Minikube to your PATH (temporary for current session):
+
+setx PATH "$($env:PATH);C:\minikube"
+
+Or permanently, go to System Properties → Environment Variables → PATH → Edit → Add C:\minikube.
+Verify installation:
+
+minikube version
